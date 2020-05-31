@@ -48,7 +48,7 @@ $stackPanel.Children.Add($buttonReset)| Out-Null
 $mainWindow.Content = $stackPanel
 
 $dispatcherTimer = [System.Windows.Threading.DispatcherTimer]::new()
-$dispatcherTimer.Interval = New-TimeSpan -Seconds 0.1
+$dispatcherTimer.Interval = [timespan]::FromMilliseconds(50)
 $dispatcherTimer.Add_Tick( { 
     if($mainWindow.SizeToContent -ne [SizeToContent]::Manual)
     {
